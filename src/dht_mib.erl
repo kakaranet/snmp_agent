@@ -25,7 +25,6 @@ update_dht_table()->
 	dhtStatus=1 }).
 
 update_dht_array()->
-    error_logger:info_msg("Update DHT array", []),
     Table = folsom_metrics:get_metric_value({riak_kv,node_get_fsm_time}),
     [mnesia:dirty_write(#dhtArray{arrayIndex = VAL, value = VAL, dhtStatus2=1})||VAL <- Table ].
 
